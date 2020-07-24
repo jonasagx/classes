@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# pickle eh biblioteca do Python que transforma codigo python numa representacao textual mais simples
+# pickle eh biblioteca do Python que transforma codigo python numa representacao textual mais simples.
 import pickle
 
 definições = {
@@ -8,6 +8,7 @@ definições = {
     "horizonte": "1 linha circular em que a terra ou o mar parecem unir-se ao céu, e que limita o campo visual de uma pessoa"
 }
 
+# aqui o script le o conteudo do arquivo `dict.p` e manda o conteúdo, que é código python, para a variável `definições`  
 definições = pickle.load( open( "dict.p", "rb" ) )
 print("Bem-vinda(o) ao Dicionario de Jonas contem", len(definições), "definições")
 
@@ -21,4 +22,6 @@ else:
     definições[palavra] = novaDefi 
 
 print("Ciao")
+
+# ao final guardamos as novas palavras no arquivo `dict.p` assim na próxima execução podemos usar as novas palavras adicionadas
 pickle.dump(definições, open( "dict.p", "wb" ))
